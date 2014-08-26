@@ -38,14 +38,20 @@
 
 	<context-param>
 		<param-name>contextClass</param-name>
-		<param-value> 
-		org.springframework.web.context.support.XmlWebApplicationContext </param-value>
+		<param-value>org.springframework.web.context.support.XmlWebApplicationContext</param-value>
 	</context-param>
 
+	<!-- listener -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	<listener>
+		<listener-class>next.db.framework.listener.ErrorListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>next.db.dao.DBListener</listener-class>
+	</listener>
+	
 	<!-- Servlets -->
 	<servlet>
 		<display-name>FrontController</display-name>
@@ -59,14 +65,6 @@
 		</param-value> </init-param> <load-on-startup>1</load-on-startup> </servlet> 
 		<servlet-mapping> <servlet-name>blog</servlet-name> <url-pattern>/</url-pattern> 
 		</servlet-mapping> -->
-	
-	<!-- Listener -->	
-	<listener>
-		<listener-class>next.db.framework.listener.ErrorListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>next.db.dao.DBListener</listener-class>
-	</listener>
 
 
 	<!-- Servlet Mapping -->

@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import next.db.autility.Constants;
-import next.db.framework.controller.Controller;
+import next.db.framework.controller.MainController;
 import next.db.framework.model.Model;
 import next.db.framework.resource.Uri;
 import next.db.framework.support.ResourceLoader;
@@ -13,7 +13,7 @@ import next.db.framework.support.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 @Component("templates")
-public class TemplateController implements Controller {
+public class TemplateController extends MainController {
 	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response, Model model) {
