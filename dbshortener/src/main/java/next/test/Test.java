@@ -30,7 +30,7 @@ public class Test {
  
     public static void insertTest(int count) throws Exception {
         for(int i = 0; i < count ; i++) {
-        	logic.getId(genRandomString(10));
+        	logic.getShort("localhost", 8080, "", genRandomString(10));
             printProgress(i, count);
         }
     }
